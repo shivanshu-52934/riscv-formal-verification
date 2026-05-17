@@ -1,0 +1,1464 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.64 (git sha1 6d2c445ae, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: pc.sv
+Parsing formal SystemVerilog input from `pc.sv' to AST representation.
+Storing AST representation for module `$abstract\pc'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: imem.sv
+Parsing formal SystemVerilog input from `imem.sv' to AST representation.
+Storing AST representation for module `$abstract\imem'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: decoder.sv
+Parsing formal SystemVerilog input from `decoder.sv' to AST representation.
+Storing AST representation for module `$abstract\decoder'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: control_unit.sv
+Parsing formal SystemVerilog input from `control_unit.sv' to AST representation.
+Storing AST representation for module `$abstract\control_unit'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: regfile.sv
+Parsing formal SystemVerilog input from `regfile.sv' to AST representation.
+Storing AST representation for module `$abstract\regfile'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: alu.sv
+Parsing formal SystemVerilog input from `alu.sv' to AST representation.
+Storing AST representation for module `$abstract\alu'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: if_id_reg.sv
+Parsing formal SystemVerilog input from `if_id_reg.sv' to AST representation.
+Storing AST representation for module `$abstract\if_id_reg'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: id_ex_reg.sv
+Parsing formal SystemVerilog input from `id_ex_reg.sv' to AST representation.
+Storing AST representation for module `$abstract\id_ex_reg'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: ex_wb_reg.sv
+Parsing formal SystemVerilog input from `ex_wb_reg.sv' to AST representation.
+Storing AST representation for module `$abstract\ex_wb_reg'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: hazard_unit.sv
+Parsing formal SystemVerilog input from `hazard_unit.sv' to AST representation.
+Storing AST representation for module `$abstract\hazard_unit'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: stall_controller.sv
+Parsing formal SystemVerilog input from `stall_controller.sv' to AST representation.
+Storing AST representation for module `$abstract\stall_controller'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: cpu_pipeline.sv
+Parsing formal SystemVerilog input from `cpu_pipeline.sv' to AST representation.
+Storing AST representation for module `$abstract\cpu_pipeline'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: pipeline_formal.sv
+Parsing formal SystemVerilog input from `pipeline_formal.sv' to AST representation.
+Storing AST representation for module `$abstract\pipeline_formal'.
+Successfully finished Verilog frontend.
+
+14. Executing PREP pass.
+
+14.1. Executing HIERARCHY pass (managing design hierarchy).
+
+14.2. Executing AST frontend in derive mode using pre-parsed AST for module `\pipeline_formal'.
+Generating RTLIL representation for module `\pipeline_formal'.
+pipeline_formal.sv:22: Warning: Identifier `\dut.wb_reg_write' is implicitly declared.
+pipeline_formal.sv:22: Warning: Identifier `\dut.wb_rd' is implicitly declared.
+pipeline_formal.sv:32: Warning: Identifier `\dut.stall' is implicitly declared.
+pipeline_formal.sv:34: Warning: Identifier `\dut.pc_inst.pc_out' is implicitly declared.
+pipeline_formal.sv:46: Warning: Identifier `\dut.if_id_inst.id_instr' is implicitly declared.
+pipeline_formal.sv:47: Warning: Identifier `\dut.if_id_inst.id_pc' is implicitly declared.
+pipeline_formal.sv:61: Warning: Identifier `\dut.id_ex_inst.ex_reg_write' is implicitly declared.
+
+14.2.1. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+
+14.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\cpu_pipeline'.
+Generating RTLIL representation for module `\cpu_pipeline'.
+
+14.2.3. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+Used module:     \cpu_pipeline
+
+14.2.4. Executing AST frontend in derive mode using pre-parsed AST for module `\ex_wb_reg'.
+Generating RTLIL representation for module `\ex_wb_reg'.
+
+14.2.5. Executing AST frontend in derive mode using pre-parsed AST for module `\alu'.
+Generating RTLIL representation for module `\alu'.
+
+14.2.6. Executing AST frontend in derive mode using pre-parsed AST for module `\stall_controller'.
+Generating RTLIL representation for module `\stall_controller'.
+
+14.2.7. Executing AST frontend in derive mode using pre-parsed AST for module `\hazard_unit'.
+Generating RTLIL representation for module `\hazard_unit'.
+
+14.2.8. Executing AST frontend in derive mode using pre-parsed AST for module `\id_ex_reg'.
+Generating RTLIL representation for module `\id_ex_reg'.
+
+14.2.9. Executing AST frontend in derive mode using pre-parsed AST for module `\regfile'.
+Generating RTLIL representation for module `\regfile'.
+
+14.2.10. Executing AST frontend in derive mode using pre-parsed AST for module `\control_unit'.
+Generating RTLIL representation for module `\control_unit'.
+
+14.2.11. Executing AST frontend in derive mode using pre-parsed AST for module `\decoder'.
+Generating RTLIL representation for module `\decoder'.
+
+14.2.12. Executing AST frontend in derive mode using pre-parsed AST for module `\if_id_reg'.
+Generating RTLIL representation for module `\if_id_reg'.
+
+14.2.13. Executing AST frontend in derive mode using pre-parsed AST for module `\imem'.
+Generating RTLIL representation for module `\imem'.
+
+14.2.14. Executing AST frontend in derive mode using pre-parsed AST for module `\pc'.
+Generating RTLIL representation for module `\pc'.
+
+14.2.15. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+Used module:     \cpu_pipeline
+Used module:         \ex_wb_reg
+Used module:         \alu
+Used module:         \stall_controller
+Used module:         \hazard_unit
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \control_unit
+Used module:         \decoder
+Used module:         \if_id_reg
+Used module:         \imem
+Used module:         \pc
+
+14.2.16. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+Used module:     \cpu_pipeline
+Used module:         \ex_wb_reg
+Used module:         \alu
+Used module:         \stall_controller
+Used module:         \hazard_unit
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \control_unit
+Used module:         \decoder
+Used module:         \if_id_reg
+Used module:         \imem
+Used module:         \pc
+Removing unused module `$abstract\pipeline_formal'.
+Removing unused module `$abstract\cpu_pipeline'.
+Removing unused module `$abstract\stall_controller'.
+Removing unused module `$abstract\hazard_unit'.
+Removing unused module `$abstract\ex_wb_reg'.
+Removing unused module `$abstract\id_ex_reg'.
+Removing unused module `$abstract\if_id_reg'.
+Removing unused module `$abstract\alu'.
+Removing unused module `$abstract\regfile'.
+Removing unused module `$abstract\control_unit'.
+Removing unused module `$abstract\decoder'.
+Removing unused module `$abstract\imem'.
+Removing unused module `$abstract\pc'.
+Removed 13 unused modules.
+Module pipeline_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+14.3. Executing PROC pass (convert processes to netlists).
+
+14.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+14.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$pc.sv:14$174 in module pc.
+Marked 1 switch rules as full_case in process $proc$imem.sv:9$173 in module imem.
+Marked 1 switch rules as full_case in process $proc$if_id_reg.sv:16$171 in module if_id_reg.
+Marked 2 switch rules as full_case in process $proc$control_unit.sv:14$170 in module control_unit.
+Marked 2 switch rules as full_case in process $proc$regfile.sv:23$90 in module regfile.
+Marked 2 switch rules as full_case in process $proc$id_ex_reg.sv:39$55 in module id_ex_reg.
+Marked 1 switch rules as full_case in process $proc$hazard_unit.sv:26$48 in module hazard_unit.
+Marked 2 switch rules as full_case in process $proc$stall_controller.sv:20$42 in module stall_controller.
+Marked 1 switch rules as full_case in process $proc$alu.sv:10$35 in module alu.
+Marked 1 switch rules as full_case in process $proc$ex_wb_reg.sv:22$34 in module ex_wb_reg.
+Removed a total of 0 dead cases.
+
+14.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 11 redundant assignments.
+Promoted 48 assignments to connections.
+
+14.3.4. Executing PROC_INIT pass (extract init attributes).
+
+14.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+14.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~20 debug messages>
+
+14.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pc.$proc$pc.sv:14$174'.
+     1/1: $0\pc_out[31:0]
+Creating decoders for process `\imem.$proc$imem.sv:9$173'.
+     1/1: $1\instr[31:0]
+Creating decoders for process `\if_id_reg.$proc$if_id_reg.sv:16$171'.
+     1/2: $0\id_instr[31:0]
+     2/2: $0\id_pc[31:0]
+Creating decoders for process `\control_unit.$proc$control_unit.sv:14$170'.
+     1/4: $2\alu_sel[2:0]
+     2/4: $1\alu_sel[2:0]
+     3/4: $1\alu_src[0:0]
+     4/4: $1\reg_write[0:0]
+Creating decoders for process `\regfile.$proc$regfile.sv:23$90'.
+     1/40: $2$memwr$\regs$regfile.sv:35$88_EN[31:0]$167
+     2/40: $2$memwr$\regs$regfile.sv:35$88_DATA[31:0]$166
+     3/40: $2$memwr$\regs$regfile.sv:35$88_ADDR[4:0]$165
+     4/40: $1\i[31:0]
+     5/40: $1$memwr$\regs$regfile.sv:28$87_EN[31:0]$158
+     6/40: $1$memwr$\regs$regfile.sv:28$86_EN[31:0]$157
+     7/40: $1$memwr$\regs$regfile.sv:28$85_EN[31:0]$156
+     8/40: $1$memwr$\regs$regfile.sv:28$84_EN[31:0]$155
+     9/40: $1$memwr$\regs$regfile.sv:28$83_EN[31:0]$154
+    10/40: $1$memwr$\regs$regfile.sv:28$82_EN[31:0]$153
+    11/40: $1$memwr$\regs$regfile.sv:28$81_EN[31:0]$152
+    12/40: $1$memwr$\regs$regfile.sv:28$80_EN[31:0]$151
+    13/40: $1$memwr$\regs$regfile.sv:28$79_EN[31:0]$150
+    14/40: $1$memwr$\regs$regfile.sv:28$78_EN[31:0]$149
+    15/40: $1$memwr$\regs$regfile.sv:28$77_EN[31:0]$148
+    16/40: $1$memwr$\regs$regfile.sv:28$76_EN[31:0]$147
+    17/40: $1$memwr$\regs$regfile.sv:28$75_EN[31:0]$146
+    18/40: $1$memwr$\regs$regfile.sv:28$74_EN[31:0]$145
+    19/40: $1$memwr$\regs$regfile.sv:28$73_EN[31:0]$144
+    20/40: $1$memwr$\regs$regfile.sv:28$72_EN[31:0]$143
+    21/40: $1$memwr$\regs$regfile.sv:28$71_EN[31:0]$142
+    22/40: $1$memwr$\regs$regfile.sv:28$70_EN[31:0]$141
+    23/40: $1$memwr$\regs$regfile.sv:28$69_EN[31:0]$140
+    24/40: $1$memwr$\regs$regfile.sv:28$68_EN[31:0]$139
+    25/40: $1$memwr$\regs$regfile.sv:28$67_EN[31:0]$138
+    26/40: $1$memwr$\regs$regfile.sv:28$66_EN[31:0]$137
+    27/40: $1$memwr$\regs$regfile.sv:28$65_EN[31:0]$136
+    28/40: $1$memwr$\regs$regfile.sv:28$64_EN[31:0]$135
+    29/40: $1$memwr$\regs$regfile.sv:28$63_EN[31:0]$134
+    30/40: $1$memwr$\regs$regfile.sv:28$62_EN[31:0]$133
+    31/40: $1$memwr$\regs$regfile.sv:28$61_EN[31:0]$132
+    32/40: $1$memwr$\regs$regfile.sv:28$60_EN[31:0]$131
+    33/40: $1$memwr$\regs$regfile.sv:28$59_EN[31:0]$130
+    34/40: $1$memwr$\regs$regfile.sv:28$58_EN[31:0]$129
+    35/40: $1$memwr$\regs$regfile.sv:28$57_EN[31:0]$128
+    36/40: $1$memwr$\regs$regfile.sv:28$56_EN[31:0]$127
+    37/40: $1$memwr$\regs$regfile.sv:37$89_EN[31:0]$162
+    38/40: $1$memwr$\regs$regfile.sv:35$88_EN[31:0]$161
+    39/40: $1$memwr$\regs$regfile.sv:35$88_DATA[31:0]$160
+    40/40: $1$memwr$\regs$regfile.sv:35$88_ADDR[4:0]$159
+Creating decoders for process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+     1/7: $0\ex_rd[4:0]
+     2/7: $0\ex_imm[31:0]
+     3/7: $0\ex_rdata2[31:0]
+     4/7: $0\ex_rdata1[31:0]
+     5/7: $0\ex_alu_sel[2:0]
+     6/7: $0\ex_alu_src[0:0]
+     7/7: $0\ex_reg_write[0:0]
+Creating decoders for process `\hazard_unit.$proc$hazard_unit.sv:26$48'.
+     1/1: $1\hazard[0:0]
+Creating decoders for process `\stall_controller.$proc$stall_controller.sv:20$42'.
+     1/1: $0\stall_counter[1:0]
+Creating decoders for process `\alu.$proc$alu.sv:10$35'.
+     1/1: $1\result[31:0]
+Creating decoders for process `\ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+     1/3: $0\wb_result[31:0]
+     2/3: $0\wb_rd[4:0]
+     3/3: $0\wb_reg_write[0:0]
+Creating decoders for process `\pipeline_formal.$proc$pipeline_formal.sv:57$26'.
+     1/1: $assert$pipeline_formal.sv:61$30_EN
+Creating decoders for process `\pipeline_formal.$proc$pipeline_formal.sv:42$17'.
+     1/2: $assert$pipeline_formal.sv:47$24_EN
+     2/2: $assert$pipeline_formal.sv:46$22_EN
+Creating decoders for process `\pipeline_formal.$proc$pipeline_formal.sv:30$11'.
+     1/1: $assert$pipeline_formal.sv:34$15_EN
+Creating decoders for process `\pipeline_formal.$proc$pipeline_formal.sv:20$6'.
+
+14.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\imem.\instr' from process `\imem.$proc$imem.sv:9$173'.
+No latch inferred for signal `\control_unit.\reg_write' from process `\control_unit.$proc$control_unit.sv:14$170'.
+No latch inferred for signal `\control_unit.\alu_src' from process `\control_unit.$proc$control_unit.sv:14$170'.
+No latch inferred for signal `\control_unit.\alu_sel' from process `\control_unit.$proc$control_unit.sv:14$170'.
+No latch inferred for signal `\hazard_unit.\hazard' from process `\hazard_unit.$proc$hazard_unit.sv:26$48'.
+No latch inferred for signal `\alu.\result' from process `\alu.$proc$alu.sv:10$35'.
+
+14.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pc.\pc_out' using process `\pc.$proc$pc.sv:14$174'.
+  created $dff cell `$procdff$420' with positive edge clock.
+Creating register for signal `\if_id_reg.\id_pc' using process `\if_id_reg.$proc$if_id_reg.sv:16$171'.
+  created $dff cell `$procdff$421' with positive edge clock.
+Creating register for signal `\if_id_reg.\id_instr' using process `\if_id_reg.$proc$if_id_reg.sv:16$171'.
+  created $dff cell `$procdff$422' with positive edge clock.
+Creating register for signal `\regfile.\i' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$423' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$56_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$424' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$57_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$425' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$58_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$426' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$59_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$427' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$60_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$428' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$61_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$429' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$62_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$430' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$63_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$431' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$64_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$432' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$65_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$433' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$66_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$434' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$67_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$435' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$68_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$436' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$69_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$437' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$70_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$438' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$71_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$439' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$72_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$440' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$73_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$441' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$74_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$442' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$75_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$443' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$76_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$444' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$77_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$445' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$78_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$446' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$79_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$447' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$80_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$448' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$81_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$449' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$82_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$450' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$83_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$451' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$84_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$452' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$85_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$453' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$86_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$454' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:28$87_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$455' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:35$88_ADDR' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$456' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:35$88_DATA' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$457' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:35$88_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$458' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$regfile.sv:37$89_EN' using process `\regfile.$proc$regfile.sv:23$90'.
+  created $dff cell `$procdff$459' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_reg_write' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$460' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_alu_src' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$461' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_alu_sel' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$462' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_rdata1' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$463' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_rdata2' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$464' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_imm' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$465' with positive edge clock.
+Creating register for signal `\id_ex_reg.\ex_rd' using process `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+  created $dff cell `$procdff$466' with positive edge clock.
+Creating register for signal `\stall_controller.\stall_counter' using process `\stall_controller.$proc$stall_controller.sv:20$42'.
+  created $dff cell `$procdff$467' with positive edge clock.
+Creating register for signal `\ex_wb_reg.\wb_reg_write' using process `\ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+  created $dff cell `$procdff$468' with positive edge clock.
+Creating register for signal `\ex_wb_reg.\wb_rd' using process `\ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+  created $dff cell `$procdff$469' with positive edge clock.
+Creating register for signal `\ex_wb_reg.\wb_result' using process `\ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+  created $dff cell `$procdff$470' with positive edge clock.
+Creating register for signal `\pipeline_formal.$past$pipeline_formal.sv:59$5$0' using process `\pipeline_formal.$proc$pipeline_formal.sv:57$26'.
+  created $dff cell `$procdff$471' with positive edge clock.
+Creating register for signal `\pipeline_formal.$past$pipeline_formal.sv:46$3$0' using process `\pipeline_formal.$proc$pipeline_formal.sv:42$17'.
+  created $dff cell `$procdff$472' with positive edge clock.
+Creating register for signal `\pipeline_formal.$past$pipeline_formal.sv:47$4$0' using process `\pipeline_formal.$proc$pipeline_formal.sv:42$17'.
+  created $dff cell `$procdff$473' with positive edge clock.
+Creating register for signal `\pipeline_formal.$past$pipeline_formal.sv:34$2$0' using process `\pipeline_formal.$proc$pipeline_formal.sv:30$11'.
+  created $dff cell `$procdff$474' with positive edge clock.
+
+14.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+14.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pc.$proc$pc.sv:14$174'.
+Removing empty process `pc.$proc$pc.sv:14$174'.
+Found and cleaned up 1 empty switch in `\imem.$proc$imem.sv:9$173'.
+Removing empty process `imem.$proc$imem.sv:9$173'.
+Found and cleaned up 2 empty switches in `\if_id_reg.$proc$if_id_reg.sv:16$171'.
+Removing empty process `if_id_reg.$proc$if_id_reg.sv:16$171'.
+Found and cleaned up 2 empty switches in `\control_unit.$proc$control_unit.sv:14$170'.
+Removing empty process `control_unit.$proc$control_unit.sv:14$170'.
+Found and cleaned up 2 empty switches in `\regfile.$proc$regfile.sv:23$90'.
+Removing empty process `regfile.$proc$regfile.sv:23$90'.
+Found and cleaned up 2 empty switches in `\id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+Removing empty process `id_ex_reg.$proc$id_ex_reg.sv:39$55'.
+Found and cleaned up 1 empty switch in `\hazard_unit.$proc$hazard_unit.sv:26$48'.
+Removing empty process `hazard_unit.$proc$hazard_unit.sv:26$48'.
+Found and cleaned up 3 empty switches in `\stall_controller.$proc$stall_controller.sv:20$42'.
+Removing empty process `stall_controller.$proc$stall_controller.sv:20$42'.
+Found and cleaned up 1 empty switch in `\alu.$proc$alu.sv:10$35'.
+Removing empty process `alu.$proc$alu.sv:10$35'.
+Found and cleaned up 1 empty switch in `\ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+Removing empty process `ex_wb_reg.$proc$ex_wb_reg.sv:22$34'.
+Found and cleaned up 1 empty switch in `\pipeline_formal.$proc$pipeline_formal.sv:57$26'.
+Removing empty process `pipeline_formal.$proc$pipeline_formal.sv:57$26'.
+Found and cleaned up 1 empty switch in `\pipeline_formal.$proc$pipeline_formal.sv:42$17'.
+Removing empty process `pipeline_formal.$proc$pipeline_formal.sv:42$17'.
+Found and cleaned up 1 empty switch in `\pipeline_formal.$proc$pipeline_formal.sv:30$11'.
+Removing empty process `pipeline_formal.$proc$pipeline_formal.sv:30$11'.
+Removing empty process `pipeline_formal.$proc$pipeline_formal.sv:20$6'.
+Cleaned up 20 empty switches.
+
+14.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+<suppressed ~1 debug messages>
+Optimizing module imem.
+<suppressed ~1 debug messages>
+Optimizing module if_id_reg.
+<suppressed ~2 debug messages>
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+<suppressed ~1 debug messages>
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+<suppressed ~1 debug messages>
+Optimizing module stall_controller.
+<suppressed ~3 debug messages>
+Optimizing module alu.
+<suppressed ~2 debug messages>
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+<suppressed ~2 debug messages>
+
+14.4. Executing FUTURE pass.
+
+14.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module imem.
+Optimizing module if_id_reg.
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+Optimizing module stall_controller.
+Optimizing module alu.
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+
+14.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \imem..
+Finding unused cells or wires in module \if_id_reg..
+Finding unused cells or wires in module \decoder..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \id_ex_reg..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \stall_controller..
+Finding unused cells or wires in module \alu..
+Finding unused cells or wires in module \ex_wb_reg..
+Finding unused cells or wires in module \cpu_pipeline..
+Finding unused cells or wires in module \pipeline_formal..
+Removed 54 unused cells and 271 unused wires.
+<suppressed ~99 debug messages>
+
+14.7. Executing CHECK pass (checking for obvious problems).
+Checking module pc...
+Checking module imem...
+Checking module if_id_reg...
+Checking module decoder...
+Checking module control_unit...
+Checking module regfile...
+Checking module id_ex_reg...
+Checking module hazard_unit...
+Checking module stall_controller...
+Checking module alu...
+Checking module ex_wb_reg...
+Checking module cpu_pipeline...
+Checking module pipeline_formal...
+Warning: Wire pipeline_formal.\dut.wb_rd is used but has no driver.
+Warning: Wire pipeline_formal.\dut.wb_reg_write is used but has no driver.
+Warning: Wire pipeline_formal.\dut.pc_inst.pc_out is used but has no driver.
+Warning: Wire pipeline_formal.\rst is used but has no driver.
+Warning: Wire pipeline_formal.\dut.id_ex_inst.ex_reg_write is used but has no driver.
+Warning: Wire pipeline_formal.\dut.stall is used but has no driver.
+Warning: Wire pipeline_formal.\dut.if_id_inst.id_instr is used but has no driver.
+Warning: Wire pipeline_formal.\dut.if_id_inst.id_pc is used but has no driver.
+Warning: Wire pipeline_formal.\clk is used but has no driver.
+Found and reported 9 problems.
+
+14.8. Executing OPT pass (performing simple optimizations).
+
+14.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module imem.
+Optimizing module if_id_reg.
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+Optimizing module stall_controller.
+Optimizing module alu.
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+
+14.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Computing hashes of 3 cells of `\pc'.
+Finding duplicate cells in `\pc'.
+Finding identical cells in module `\imem'.
+Computing hashes of 4 cells of `\imem'.
+Finding duplicate cells in `\imem'.
+Finding identical cells in module `\if_id_reg'.
+Computing hashes of 6 cells of `\if_id_reg'.
+Finding duplicate cells in `\if_id_reg'.
+Finding identical cells in module `\decoder'.
+Computing hashes of 0 cells of `\decoder'.
+Finding duplicate cells in `\decoder'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 11 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Computing hashes of 8 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\regfile'.
+Computing hashes of 80 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\id_ex_reg'.
+Computing hashes of 21 cells of `\id_ex_reg'.
+Finding duplicate cells in `\id_ex_reg'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 7 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\stall_controller'.
+Computing hashes of 9 cells of `\stall_controller'.
+Finding duplicate cells in `\stall_controller'.
+Computing hashes of 8 cells of `\stall_controller'.
+Finding duplicate cells in `\stall_controller'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\alu'.
+Computing hashes of 12 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Finding identical cells in module `\ex_wb_reg'.
+Computing hashes of 6 cells of `\ex_wb_reg'.
+Finding duplicate cells in `\ex_wb_reg'.
+Finding identical cells in module `\cpu_pipeline'.
+Computing hashes of 0 cells of `\cpu_pipeline'.
+Finding duplicate cells in `\cpu_pipeline'.
+Finding identical cells in module `\pipeline_formal'.
+Computing hashes of 26 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+Computing hashes of 24 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+Computing hashes of 23 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+<suppressed ~9 debug messages>
+Removed a total of 7 cells.
+
+14.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pc..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imem..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \if_id_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \decoder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$201.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$230.
+    dead port 1/2 on $mux $procmux$224.
+    dead port 1/2 on $mux $procmux$218.
+Running muxtree optimizer on module \id_ex_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \stall_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ex_wb_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu_pipeline..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \pipeline_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 4 multiplexer ports.
+<suppressed ~140 debug messages>
+
+14.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pc.
+  Optimizing cells in module \imem.
+  Optimizing cells in module \if_id_reg.
+  Optimizing cells in module \decoder.
+  Optimizing cells in module \control_unit.
+    New ctrl vector for $pmux cell $procmux$211: $auto$opt_reduce.cc:137:opt_pmux$510
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \regfile.
+    Consolidated identical input bits for $mux cell $procmux$332:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126
+      New ports: A=1'1, B=1'0, Y=$0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0]
+      New connections: $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [31:1] = { $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] $0$memwr$\regs$regfile.sv:37$89_EN[31:0]$126 [0] }
+    Consolidated identical input bits for $mux cell $procmux$329:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [31:1] = { $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] $0$memwr$\regs$regfile.sv:28$56_EN[31:0]$91 [0] }
+    Consolidated identical input bits for $mux cell $procmux$326:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [31:1] = { $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] $0$memwr$\regs$regfile.sv:28$57_EN[31:0]$92 [0] }
+    Consolidated identical input bits for $mux cell $procmux$323:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [31:1] = { $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] $0$memwr$\regs$regfile.sv:28$58_EN[31:0]$93 [0] }
+    Consolidated identical input bits for $mux cell $procmux$320:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [31:1] = { $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] $0$memwr$\regs$regfile.sv:28$59_EN[31:0]$94 [0] }
+    Consolidated identical input bits for $mux cell $procmux$317:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [31:1] = { $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] $0$memwr$\regs$regfile.sv:28$60_EN[31:0]$95 [0] }
+    Consolidated identical input bits for $mux cell $procmux$314:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [31:1] = { $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] $0$memwr$\regs$regfile.sv:28$61_EN[31:0]$96 [0] }
+    Consolidated identical input bits for $mux cell $procmux$311:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [31:1] = { $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] $0$memwr$\regs$regfile.sv:28$62_EN[31:0]$97 [0] }
+    Consolidated identical input bits for $mux cell $procmux$308:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [31:1] = { $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] $0$memwr$\regs$regfile.sv:28$63_EN[31:0]$98 [0] }
+    Consolidated identical input bits for $mux cell $procmux$305:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [31:1] = { $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] $0$memwr$\regs$regfile.sv:28$64_EN[31:0]$99 [0] }
+    Consolidated identical input bits for $mux cell $procmux$302:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [31:1] = { $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] $0$memwr$\regs$regfile.sv:28$65_EN[31:0]$100 [0] }
+    Consolidated identical input bits for $mux cell $procmux$299:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [31:1] = { $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] $0$memwr$\regs$regfile.sv:28$66_EN[31:0]$101 [0] }
+    Consolidated identical input bits for $mux cell $procmux$296:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [31:1] = { $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] $0$memwr$\regs$regfile.sv:28$67_EN[31:0]$102 [0] }
+    Consolidated identical input bits for $mux cell $procmux$293:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [31:1] = { $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] $0$memwr$\regs$regfile.sv:28$68_EN[31:0]$103 [0] }
+    Consolidated identical input bits for $mux cell $procmux$290:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [31:1] = { $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] $0$memwr$\regs$regfile.sv:28$69_EN[31:0]$104 [0] }
+    Consolidated identical input bits for $mux cell $procmux$287:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [31:1] = { $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] $0$memwr$\regs$regfile.sv:28$70_EN[31:0]$105 [0] }
+    Consolidated identical input bits for $mux cell $procmux$284:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [31:1] = { $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] $0$memwr$\regs$regfile.sv:28$71_EN[31:0]$106 [0] }
+    Consolidated identical input bits for $mux cell $procmux$281:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [31:1] = { $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] $0$memwr$\regs$regfile.sv:28$72_EN[31:0]$107 [0] }
+    Consolidated identical input bits for $mux cell $procmux$278:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [31:1] = { $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] $0$memwr$\regs$regfile.sv:28$73_EN[31:0]$108 [0] }
+    Consolidated identical input bits for $mux cell $procmux$275:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [31:1] = { $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] $0$memwr$\regs$regfile.sv:28$74_EN[31:0]$109 [0] }
+    Consolidated identical input bits for $mux cell $procmux$272:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [31:1] = { $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] $0$memwr$\regs$regfile.sv:28$75_EN[31:0]$110 [0] }
+    Consolidated identical input bits for $mux cell $procmux$269:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [31:1] = { $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] $0$memwr$\regs$regfile.sv:28$76_EN[31:0]$111 [0] }
+    Consolidated identical input bits for $mux cell $procmux$266:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [31:1] = { $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] $0$memwr$\regs$regfile.sv:28$77_EN[31:0]$112 [0] }
+    Consolidated identical input bits for $mux cell $procmux$263:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [31:1] = { $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] $0$memwr$\regs$regfile.sv:28$78_EN[31:0]$113 [0] }
+    Consolidated identical input bits for $mux cell $procmux$260:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [31:1] = { $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] $0$memwr$\regs$regfile.sv:28$79_EN[31:0]$114 [0] }
+    Consolidated identical input bits for $mux cell $procmux$257:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [31:1] = { $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] $0$memwr$\regs$regfile.sv:28$80_EN[31:0]$115 [0] }
+    Consolidated identical input bits for $mux cell $procmux$254:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [31:1] = { $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] $0$memwr$\regs$regfile.sv:28$81_EN[31:0]$116 [0] }
+    Consolidated identical input bits for $mux cell $procmux$251:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [31:1] = { $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] $0$memwr$\regs$regfile.sv:28$82_EN[31:0]$117 [0] }
+    Consolidated identical input bits for $mux cell $procmux$248:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [31:1] = { $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] $0$memwr$\regs$regfile.sv:28$83_EN[31:0]$118 [0] }
+    Consolidated identical input bits for $mux cell $procmux$245:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [31:1] = { $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] $0$memwr$\regs$regfile.sv:28$84_EN[31:0]$119 [0] }
+    Consolidated identical input bits for $mux cell $procmux$242:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [31:1] = { $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] $0$memwr$\regs$regfile.sv:28$85_EN[31:0]$120 [0] }
+    Consolidated identical input bits for $mux cell $procmux$239:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [31:1] = { $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] $0$memwr$\regs$regfile.sv:28$86_EN[31:0]$121 [0] }
+    Consolidated identical input bits for $mux cell $procmux$236:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0]
+      New connections: $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [31:1] = { $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] $0$memwr$\regs$regfile.sv:28$87_EN[31:0]$122 [0] }
+    Consolidated identical input bits for $mux cell $procmux$215:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$215_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$215_Y [0]
+      New connections: $procmux$215_Y [31:1] = { $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] $procmux$215_Y [0] }
+  Optimizing cells in module \regfile.
+    Consolidated identical input bits for $mux cell $procmux$335:
+      Old ports: A=$2$memwr$\regs$regfile.sv:35$88_EN[31:0]$167, B=0, Y=$0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125
+      New ports: A=$procmux$215_Y [0], B=1'0, Y=$0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0]
+      New connections: $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [31:1] = { $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] $0$memwr$\regs$regfile.sv:35$88_EN[31:0]$125 [0] }
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \id_ex_reg.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \stall_controller.
+  Optimizing cells in module \alu.
+  Optimizing cells in module \ex_wb_reg.
+  Optimizing cells in module \cpu_pipeline.
+  Optimizing cells in module \pipeline_formal.
+Performed a total of 36 changes.
+
+14.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Computing hashes of 3 cells of `\pc'.
+Finding duplicate cells in `\pc'.
+Finding identical cells in module `\imem'.
+Computing hashes of 4 cells of `\imem'.
+Finding duplicate cells in `\imem'.
+Finding identical cells in module `\if_id_reg'.
+Computing hashes of 6 cells of `\if_id_reg'.
+Finding duplicate cells in `\if_id_reg'.
+Finding identical cells in module `\decoder'.
+Computing hashes of 0 cells of `\decoder'.
+Finding duplicate cells in `\decoder'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 8 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 77 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Computing hashes of 46 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+<suppressed ~93 debug messages>
+Finding identical cells in module `\id_ex_reg'.
+Computing hashes of 21 cells of `\id_ex_reg'.
+Finding duplicate cells in `\id_ex_reg'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 7 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\stall_controller'.
+Computing hashes of 8 cells of `\stall_controller'.
+Finding duplicate cells in `\stall_controller'.
+Finding identical cells in module `\alu'.
+Computing hashes of 12 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Finding identical cells in module `\ex_wb_reg'.
+Computing hashes of 6 cells of `\ex_wb_reg'.
+Finding duplicate cells in `\ex_wb_reg'.
+Finding identical cells in module `\cpu_pipeline'.
+Computing hashes of 0 cells of `\cpu_pipeline'.
+Finding duplicate cells in `\cpu_pipeline'.
+Finding identical cells in module `\pipeline_formal'.
+Computing hashes of 23 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+Computing hashes of 21 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+<suppressed ~6 debug messages>
+Removed a total of 33 cells.
+
+14.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \imem..
+Finding unused cells or wires in module \if_id_reg..
+Finding unused cells or wires in module \decoder..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \id_ex_reg..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \stall_controller..
+Finding unused cells or wires in module \alu..
+Finding unused cells or wires in module \ex_wb_reg..
+Finding unused cells or wires in module \cpu_pipeline..
+Finding unused cells or wires in module \pipeline_formal..
+Removed 0 unused cells and 44 unused wires.
+<suppressed ~4 debug messages>
+
+14.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module imem.
+Optimizing module if_id_reg.
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+Optimizing module stall_controller.
+Optimizing module alu.
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+
+14.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+14.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pc..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imem..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \if_id_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \decoder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \id_ex_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \stall_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ex_wb_reg..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu_pipeline..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \pipeline_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~70 debug messages>
+
+14.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pc.
+  Optimizing cells in module \imem.
+  Optimizing cells in module \if_id_reg.
+  Optimizing cells in module \decoder.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \id_ex_reg.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \stall_controller.
+  Optimizing cells in module \alu.
+  Optimizing cells in module \ex_wb_reg.
+  Optimizing cells in module \cpu_pipeline.
+  Optimizing cells in module \pipeline_formal.
+Performed a total of 0 changes.
+
+14.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Computing hashes of 3 cells of `\pc'.
+Finding duplicate cells in `\pc'.
+Finding identical cells in module `\imem'.
+Computing hashes of 4 cells of `\imem'.
+Finding duplicate cells in `\imem'.
+Finding identical cells in module `\if_id_reg'.
+Computing hashes of 6 cells of `\if_id_reg'.
+Finding duplicate cells in `\if_id_reg'.
+Finding identical cells in module `\decoder'.
+Computing hashes of 0 cells of `\decoder'.
+Finding duplicate cells in `\decoder'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 8 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 46 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\id_ex_reg'.
+Computing hashes of 21 cells of `\id_ex_reg'.
+Finding duplicate cells in `\id_ex_reg'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 7 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\stall_controller'.
+Computing hashes of 8 cells of `\stall_controller'.
+Finding duplicate cells in `\stall_controller'.
+Finding identical cells in module `\alu'.
+Computing hashes of 12 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Finding identical cells in module `\ex_wb_reg'.
+Computing hashes of 6 cells of `\ex_wb_reg'.
+Finding duplicate cells in `\ex_wb_reg'.
+Finding identical cells in module `\cpu_pipeline'.
+Computing hashes of 0 cells of `\cpu_pipeline'.
+Finding duplicate cells in `\cpu_pipeline'.
+Finding identical cells in module `\pipeline_formal'.
+Computing hashes of 21 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+Removed a total of 0 cells.
+
+14.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \imem..
+Finding unused cells or wires in module \if_id_reg..
+Finding unused cells or wires in module \decoder..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \id_ex_reg..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \stall_controller..
+Finding unused cells or wires in module \alu..
+Finding unused cells or wires in module \ex_wb_reg..
+Finding unused cells or wires in module \cpu_pipeline..
+Finding unused cells or wires in module \pipeline_formal..
+
+14.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module imem.
+Optimizing module if_id_reg.
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+Optimizing module stall_controller.
+Optimizing module alu.
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+
+14.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+14.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 bits (of 32) from port B of cell imem.$procmux$183_CMP0 ($eq).
+Removed top 8 bits (of 32) from mux cell imem.$procmux$182 ($pmux).
+Removed top 29 bits (of 32) from port B of cell imem.$procmux$184_CMP0 ($eq).
+Removed top 1 bits (of 10) from port B of cell control_unit.$procmux$200_CMP0 ($eq).
+Removed top 2 bits (of 3) from mux cell control_unit.$procmux$199 ($mux).
+Removed top 2 bits (of 3) from mux cell control_unit.$procmux$205 ($mux).
+Removed top 2 bits (of 7) from port B of cell control_unit.$procmux$212_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell control_unit.$procmux$213_CMP0 ($eq).
+Removed top 2 bits (of 3) from wire control_unit.$2\alu_sel[2:0].
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$478 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$479 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$480 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$481 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$482 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$483 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$484 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$485 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$486 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$487 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$488 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$489 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$490 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$491 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$492 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$493 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$494 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$495 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$496 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$497 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$498 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$499 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$500 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$501 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$502 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$503 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$504 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$505 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$506 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$508 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$475 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$476 (regs).
+Removed top 27 address bits (of 32) from memory init port regfile.$auto$proc_memwr.cc:45:proc_memwr$477 (regs).
+Removed top 31 bits (of 32) from port B of cell stall_controller.$sub$stall_controller.sv:42$46 ($sub).
+Removed top 30 bits (of 32) from port Y of cell stall_controller.$sub$stall_controller.sv:42$46 ($sub).
+Removed top 30 bits (of 32) from wire stall_controller.$sub$stall_controller.sv:42$46_Y.
+Removed top 1 bits (of 3) from port B of cell alu.$procmux$399_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell alu.$procmux$400_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell alu.$procmux$401_CMP0 ($eq).
+
+14.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \imem..
+Finding unused cells or wires in module \if_id_reg..
+Finding unused cells or wires in module \decoder..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \id_ex_reg..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \stall_controller..
+Finding unused cells or wires in module \alu..
+Finding unused cells or wires in module \ex_wb_reg..
+Finding unused cells or wires in module \cpu_pipeline..
+Finding unused cells or wires in module \pipeline_formal..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+14.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+14.12. Executing OPT pass (performing simple optimizations).
+
+14.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module imem.
+Optimizing module if_id_reg.
+Optimizing module decoder.
+Optimizing module control_unit.
+Optimizing module regfile.
+Optimizing module id_ex_reg.
+Optimizing module hazard_unit.
+Optimizing module stall_controller.
+Optimizing module alu.
+Optimizing module ex_wb_reg.
+Optimizing module cpu_pipeline.
+Optimizing module pipeline_formal.
+
+14.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Computing hashes of 3 cells of `\pc'.
+Finding duplicate cells in `\pc'.
+Finding identical cells in module `\imem'.
+Computing hashes of 4 cells of `\imem'.
+Finding duplicate cells in `\imem'.
+Finding identical cells in module `\if_id_reg'.
+Computing hashes of 6 cells of `\if_id_reg'.
+Finding duplicate cells in `\if_id_reg'.
+Finding identical cells in module `\decoder'.
+Computing hashes of 0 cells of `\decoder'.
+Finding duplicate cells in `\decoder'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 8 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 11 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\id_ex_reg'.
+Computing hashes of 21 cells of `\id_ex_reg'.
+Finding duplicate cells in `\id_ex_reg'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 7 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\stall_controller'.
+Computing hashes of 8 cells of `\stall_controller'.
+Finding duplicate cells in `\stall_controller'.
+Finding identical cells in module `\alu'.
+Computing hashes of 12 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Finding identical cells in module `\ex_wb_reg'.
+Computing hashes of 6 cells of `\ex_wb_reg'.
+Finding duplicate cells in `\ex_wb_reg'.
+Finding identical cells in module `\cpu_pipeline'.
+Computing hashes of 0 cells of `\cpu_pipeline'.
+Finding duplicate cells in `\cpu_pipeline'.
+Finding identical cells in module `\pipeline_formal'.
+Computing hashes of 21 cells of `\pipeline_formal'.
+Finding duplicate cells in `\pipeline_formal'.
+Removed a total of 0 cells.
+
+14.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \imem..
+Finding unused cells or wires in module \if_id_reg..
+Finding unused cells or wires in module \decoder..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \id_ex_reg..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \stall_controller..
+Finding unused cells or wires in module \alu..
+Finding unused cells or wires in module \ex_wb_reg..
+Finding unused cells or wires in module \cpu_pipeline..
+Finding unused cells or wires in module \pipeline_formal..
+
+14.12.4. Finished fast OPT passes.
+
+14.13. Executing SORT pass.
+
+14.14. Printing statistics.
+
+=== alu ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      265 wire bits
+        5 public wires
+      100 public wire bits
+        5 ports
+      100 port bits
+       12 cells
+        1   $add
+        1   $and
+        4   $eq
+        2   $logic_not
+        1   $or
+        1   $pmux
+        1   $sub
+        1   $xor
+
+=== control_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+       27 wire bits
+        6 public wires
+       22 public wire bits
+        6 ports
+       22 port bits
+        8 cells
+        3   $eq
+        4   $mux
+        1   $reduce_or
+
+=== cpu_pipeline ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        2 wires
+        2 wire bits
+        2 public wires
+        2 public wire bits
+        2 ports
+        2 port bits
+
+=== decoder ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+       64 wire bits
+        7 public wires
+       64 public wire bits
+        7 ports
+       64 port bits
+
+=== ex_wb_reg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+      116 wire bits
+        8 public wires
+       78 public wire bits
+        8 ports
+       78 port bits
+        6 cells
+        3   $dff
+        3   $mux
+
+=== hazard_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+       23 wire bits
+        5 public wires
+       17 public wire bits
+        5 ports
+       17 port bits
+        7 cells
+        2   $eq
+        2   $logic_and
+        1   $logic_or
+        1   $mux
+        1   $reduce_bool
+
+=== id_ex_reg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       31 wires
+      427 wire bits
+       17 public wires
+      215 public wire bits
+       17 ports
+      215 port bits
+       21 cells
+        7   $dff
+       14   $mux
+
+=== if_id_reg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+      259 wire bits
+        7 public wires
+      131 public wire bits
+        7 ports
+      131 port bits
+        6 cells
+        2   $dff
+        4   $mux
+
+=== imem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       67 wire bits
+        2 public wires
+       64 public wire bits
+        2 ports
+       64 port bits
+        4 cells
+        2   $eq
+        1   $logic_not
+        1   $pmux
+
+=== pc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      131 wire bits
+        5 public wires
+       67 public wire bits
+        5 ports
+       67 port bits
+        3 cells
+        1   $dff
+        2   $mux
+
+=== pipeline_formal ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       25 wires
+       25 wire bits
+        9 public wires
+        9 public wire bits
+       21 cells
+        5   $check
+        4   $dff
+        3   $eq
+        3   $logic_and
+        2   $logic_not
+        2   $mux
+        2   $not
+
+=== regfile ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      318 wire bits
+        9 public wires
+      114 public wire bits
+        9 ports
+      114 port bits
+       11 cells
+        1   $logic_and
+        1   $mem_v2
+        8   $mux
+        1   $reduce_bool
+
+=== stall_controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+       46 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        8 cells
+        1   $dff
+        1   $logic_and
+        1   $logic_not
+        3   $mux
+        1   $reduce_bool
+        1   $sub
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       21 pipeline_formal
+
+        +----------Count including submodules.
+        | 
+       25 wires
+       25 wire bits
+        9 public wires
+        9 public wire bits
+        - ports
+        - port bits
+        - memories
+        - memory bits
+        - processes
+       21 cells
+        5   $check
+        4   $dff
+        3   $eq
+        3   $logic_and
+        2   $logic_not
+        2   $mux
+        2   $not
+
+14.15. Executing CHECK pass (checking for obvious problems).
+Checking module alu...
+Checking module control_unit...
+Checking module cpu_pipeline...
+Checking module decoder...
+Checking module ex_wb_reg...
+Checking module hazard_unit...
+Checking module id_ex_reg...
+Checking module if_id_reg...
+Checking module imem...
+Checking module pc...
+Checking module pipeline_formal...
+Warning: Wire pipeline_formal.\rst is used but has no driver.
+Warning: Wire pipeline_formal.\dut.stall is used but has no driver.
+Warning: Wire pipeline_formal.\dut.wb_reg_write is used but has no driver.
+Warning: Wire pipeline_formal.\dut.id_ex_inst.ex_reg_write is used but has no driver.
+Warning: Wire pipeline_formal.\dut.if_id_inst.id_pc is used but has no driver.
+Warning: Wire pipeline_formal.\dut.if_id_inst.id_instr is used but has no driver.
+Warning: Wire pipeline_formal.\dut.pc_inst.pc_out is used but has no driver.
+Warning: Wire pipeline_formal.\dut.wb_rd is used but has no driver.
+Warning: Wire pipeline_formal.\clk is used but has no driver.
+Checking module regfile...
+Checking module stall_controller...
+Found and reported 9 problems.
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `pipeline_formal'. Setting top module to pipeline_formal.
+
+15.1. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+
+15.2. Analyzing design hierarchy..
+Top module:  \pipeline_formal
+Removing unused module `\alu'.
+Removing unused module `\control_unit'.
+Removing unused module `\cpu_pipeline'.
+Removing unused module `\decoder'.
+Removing unused module `\ex_wb_reg'.
+Removing unused module `\hazard_unit'.
+Removing unused module `\id_ex_reg'.
+Removing unused module `\if_id_reg'.
+Removing unused module `\imem'.
+Removing unused module `\pc'.
+Removing unused module `\regfile'.
+Removing unused module `\stall_controller'.
+Removed 12 unused modules.
+Module pipeline_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+16. Executing jny backend.
+
+17. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 16 unique messages, 25 total
+End of script. Logfile hash: 0f35c155bf, time: 0.12s, user: 0.07s, system: 0.04s, MEM: 21.62 MB peak
+Yosys 0.64 (git sha1 6d2c445ae, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3)
+Time spent: 18% 2x hierarchy (0 sec), 17% 5x opt_clean (0 sec), ...

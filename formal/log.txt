@@ -1,0 +1,37 @@
+SBY 19:21:20 [pipeline] Removing directory '/home/shivanshu/riscv-formal/formal/pipeline'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/pc.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/pc.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/imem.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/imem.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/decoder.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/decoder.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/control_unit.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/control_unit.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/regfile.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/regfile.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/alu.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/alu.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/if_id_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/if_id_reg.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/id_ex_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/id_ex_reg.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/ex_wb_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/ex_wb_reg.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/hazard_unit.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/hazard_unit.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/stall_controller.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/stall_controller.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/cpu_pipeline.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/cpu_pipeline.sv'.
+SBY 19:21:20 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/pipeline_formal.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/pipeline_formal.sv'.
+SBY 19:21:20 [pipeline] engine_0: smtbmc yices
+SBY 19:21:20 [pipeline] base: starting process "cd pipeline/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:38: Warning: Identifier `\dut.regfile_inst.regs' is implicitly declared.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:38: Warning: Range select out of bounds on signal `\dut.regfile_inst.regs': Setting result bit to undef.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:48: Warning: Identifier `\dut.stall' is implicitly declared.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:50: Warning: Identifier `\dut.pc_inst.pc_out' is implicitly declared.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:62: Warning: Identifier `\dut.if_id_inst.id_instr' is implicitly declared.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:63: Warning: Identifier `\dut.if_id_inst.id_pc' is implicitly declared.
+SBY 19:21:20 [pipeline] base: pipeline_formal.sv:77: Warning: Identifier `\dut.id_ex_inst.ex_reg_write' is implicitly declared.
+SBY 19:21:20 [pipeline] base: Warning: Wire pipeline_formal.\dut.id_ex_inst.ex_reg_write is used but has no driver.
+SBY 19:21:20 [pipeline] base: Warning: Wire pipeline_formal.\dut.pc_inst.pc_out is used but has no driver.
+SBY 19:21:20 [pipeline] base: Warning: Wire pipeline_formal.\dut.if_id_inst.id_instr is used but has no driver.
+SBY 19:21:20 [pipeline] base: Warning: Wire pipeline_formal.\dut.if_id_inst.id_pc is used but has no driver.
+SBY 19:21:20 [pipeline] base: finished (returncode=0)
+SBY 19:21:20 [pipeline] prep: starting process "cd pipeline/model; yosys -ql design_prep.log design_prep.ys"
+SBY 19:21:20 [pipeline] prep: ERROR: Const CLK on $auto$async2sync.cc:110:execute$533 ($dff) from module pipeline_formal, run async2sync first.
+SBY 19:21:20 [pipeline] prep: finished (returncode=1)
+SBY 19:21:20 [pipeline] prep: task failed. ERROR.
+SBY 19:21:20 [pipeline] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:21:20 [pipeline] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:21:20 [pipeline] summary: engine_0 (smtbmc yices) did not return a status
+SBY 19:21:20 [pipeline] summary: engine_0 did not produce any traces
+SBY 19:21:20 [pipeline] DONE (ERROR, rc=16)

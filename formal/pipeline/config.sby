@@ -1,0 +1,40 @@
+[options]
+mode prove
+depth 20
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal pc.sv
+read -formal imem.sv
+read -formal decoder.sv
+read -formal control_unit.sv
+read -formal regfile.sv
+read -formal alu.sv
+read -formal if_id_reg.sv
+read -formal id_ex_reg.sv
+read -formal ex_wb_reg.sv
+read -formal hazard_unit.sv
+read -formal stall_controller.sv
+read -formal cpu_pipeline.sv
+
+read -formal pipeline_formal.sv
+
+prep -top pipeline_formal
+
+[files]
+../rtl/pc.sv
+../rtl/imem.sv
+../rtl/decoder.sv
+../rtl/control_unit.sv
+../rtl/regfile.sv
+../rtl/alu.sv
+../rtl/if_id_reg.sv
+../rtl/id_ex_reg.sv
+../rtl/ex_wb_reg.sv
+../rtl/hazard_unit.sv
+../rtl/stall_controller.sv
+../rtl/cpu_pipeline.sv
+
+pipeline_formal.sv

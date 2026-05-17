@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 5
+multiclock off
+
+[engines]
+smtbmc yices
+
+[script]
+read -formal regfile.sv regfile_formal.sv
+prep -top regfile_formal
+
+[files]
+../rtl/regfile.sv
+regfile_formal.sv

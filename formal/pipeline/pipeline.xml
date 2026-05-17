@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-05-17T05:58:04" hostname="DESKTOP-LCFDNUM" package="pipeline" id="0" name="default" tests="5" errors="0" failures="2" time="0" skipped="4">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="FAIL"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+<failure type="FAIL" message="Task returned status FAIL." />
+</testcase>
+<testcase classname="default" name="Property ASSERT in pipeline_formal at pipeline_formal.sv:22.5-22.52" time="0" type="ASSERT" location="pipeline_formal.sv:22.5-22.52" id="_witness_.check_assert_pipeline_formal_sv_22_7">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in pipeline_formal at pipeline_formal.sv:34.9-34.44" time="0" type="ASSERT" location="pipeline_formal.sv:34.9-34.44" id="_witness_.check_assert_pipeline_formal_sv_34_15">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in pipeline_formal at pipeline_formal.sv:46.9-46.49" time="0" type="ASSERT" location="pipeline_formal.sv:46.9-46.49" id="_witness_.check_assert_pipeline_formal_sv_46_22">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in pipeline_formal at pipeline_formal.sv:47.9-47.46" time="0" type="ASSERT" location="pipeline_formal.sv:47.9-47.46" id="_witness_.check_assert_pipeline_formal_sv_47_24">
+<skipped />
+</testcase>
+<testcase classname="default" name="Property ASSERT in pipeline_formal at pipeline_formal.sv:61.9-61.49" time="0" type="ASSERT" location="pipeline_formal.sv:61.9-61.49" id="_witness_.check_assert_pipeline_formal_sv_61_30" tracefile="engine_0/trace.vcd">
+<failure type="ASSERT" message="Property ASSERT in pipeline_formal at pipeline_formal.sv:61.9-61.49 failed. Trace file: engine_0/trace.vcd" />
+</testcase>
+<system-out>SBY  5:58:04 [pipeline] Removing directory '/home/shivanshu/riscv-formal/formal/pipeline'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/pc.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/pc.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/imem.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/imem.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/decoder.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/decoder.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/control_unit.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/control_unit.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/regfile.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/regfile.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/alu.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/alu.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/if_id_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/if_id_reg.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/id_ex_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/id_ex_reg.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/ex_wb_reg.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/ex_wb_reg.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/hazard_unit.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/hazard_unit.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/stall_controller.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/stall_controller.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/../rtl/cpu_pipeline.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/cpu_pipeline.sv'.
+SBY  5:58:04 [pipeline] Copy '/home/shivanshu/riscv-formal/formal/pipeline_formal.sv' to '/home/shivanshu/riscv-formal/formal/pipeline/src/pipeline_formal.sv'.
+SBY  5:58:04 [pipeline] engine_0: smtbmc yices
+SBY  5:58:04 [pipeline] base: starting process &quot;cd pipeline/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:22: Warning: Identifier `\dut.wb_reg_write' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:22: Warning: Identifier `\dut.wb_rd' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:32: Warning: Identifier `\dut.stall' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:34: Warning: Identifier `\dut.pc_inst.pc_out' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:46: Warning: Identifier `\dut.if_id_inst.id_instr' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:47: Warning: Identifier `\dut.if_id_inst.id_pc' is implicitly declared.
+SBY  5:58:04 [pipeline] base: pipeline_formal.sv:61: Warning: Identifier `\dut.id_ex_inst.ex_reg_write' is implicitly declared.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.wb_rd is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.wb_reg_write is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.pc_inst.pc_out is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\rst is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.id_ex_inst.ex_reg_write is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.stall is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.if_id_inst.id_instr is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\dut.if_id_inst.id_pc is used but has no driver.
+SBY  5:58:04 [pipeline] base: Warning: Wire pipeline_formal.\clk is used but has no driver.
+SBY  5:58:04 [pipeline] base: finished (returncode=0)
+SBY  5:58:04 [pipeline] prep: starting process &quot;cd pipeline/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\rst is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.stall is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.wb_reg_write is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.id_ex_inst.ex_reg_write is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.if_id_inst.id_pc is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.if_id_inst.id_instr is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.wb_rd is used but has no driver.
+SBY  5:58:04 [pipeline] prep: Warning: Wire pipeline_formal.\dut.pc_inst.pc_out is used but has no driver.
+SBY  5:58:04 [pipeline] prep: finished (returncode=0)
+SBY  5:58:04 [pipeline] smt2: starting process &quot;cd pipeline/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  5:58:04 [pipeline] smt2: finished (returncode=0)
+SBY  5:58:04 [pipeline] engine_0.basecase: starting process &quot;cd pipeline; yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY  5:58:04 [pipeline] engine_0.induction: starting process &quot;cd pipeline; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Solver: yices
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 18..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Assert failed in pipeline_formal: pipeline_formal.sv:61.9-61.49 (_witness_.check_assert_pipeline_formal_sv_61_30)
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 17..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 15..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace.yw
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 14..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 13..
+SBY  5:58:04 [pipeline] engine_0.basecase: ##   0:00:00  Status: failed
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 12..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 11..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 10..
+SBY  5:58:04 [pipeline] engine_0.induction: ##   0:00:00  Trying induction in step 9..
+SBY  5:58:04 [pipeline] engine_0.basecase: finished (returncode=1)
+SBY  5:58:04 [pipeline] engine_0.basecase: Status returned by engine for basecase: FAIL
+SBY  5:58:04 [pipeline] engine_0.induction: terminating process
+SBY  5:58:04 [pipeline] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  5:58:04 [pipeline] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  5:58:04 [pipeline] summary: engine_0 (smtbmc yices) returned FAIL for basecase
+SBY  5:58:04 [pipeline] summary: counterexample trace [basecase]: pipeline/engine_0/trace.vcd
+SBY  5:58:04 [pipeline] summary:   failed assertion pipeline_formal._witness_.check_assert_pipeline_formal_sv_61_30 at pipeline_formal.sv:61.9-61.49 step 1
+SBY  5:58:04 [pipeline] DONE (FAIL, rc=2)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>
