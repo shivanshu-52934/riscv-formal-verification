@@ -302,19 +302,3 @@ gtkwave hazard_bug/engine_0/trace.vcd
 
 ---
 
-## Resume bullet
-
-> Designed and formally verified a RISC-V RV32I 5-stage pipelined processor in SystemVerilog. Wrote 8 safety and correctness properties for the hazard detection and data forwarding unit; proved all properties by k-induction using SymbiYosys and z3 in under 1 second. Injected two RTL bugs (reversed forwarding priority, missing x0 guard) and confirmed automatic detection via counterexample traces. Discovered and corrected an incorrect design assumption using counterexample-driven analysis.
-
----
-
-## Interview talking points
-
-- Why formal over simulation? — simulation only checks what you think of; formal checks everything
-- What is k-induction? — basecase + inductive step = unbounded proof without exhausting all states
-- What is a counterexample? — a concrete input sequence the solver found that violates a property
-- What does `$past()` do? — reads the value of a signal from the previous clock cycle
-- What is a cover point? — proves a state is reachable, validates the model isn't over-constrained
-- What is the stall-flush co-occurrence? — the design insight found by the tool, correcting a wrong assumption
-- Why block-level FV? — state space explosion; hierarchical decomposition is how it's done industrially
-- What bugs were found? — forwarding priority reversal (silent data corruption) and missing x0 guard (spurious stall)
