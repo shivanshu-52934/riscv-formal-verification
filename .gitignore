@@ -1,0 +1,31 @@
+# Compiled binaries
+*_sim
+
+# Waveforms
+*.vcd
+
+# SQLite / formal databases
+*.sqlite
+
+# Generated logs
+*.log
+
+# XML reports
+*.xml
+
+# Yosys generated files
+*.il
+*.json
+*.smt2
+*.ys
+
+# SymbiYosys output directories
+formal/alu/
+formal/regfile/
+formal/pipeline/
+
+# GTKWave save files
+*.gtkw
+
+# Temporary files
+*.tmp

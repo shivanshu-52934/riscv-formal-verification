@@ -1,6 +1,0 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-engine_0 (smtbmc yices) returned FAIL for basecase
-counterexample trace [basecase]: engine_0/trace.vcd
-counterexample trace [basecase]: engine_0/trace.yw
-  failed assertion pipeline_formal._witness_.check_assert_pipeline_formal_sv_61_30 at pipeline_formal.sv:61.9-61.49 step 1
